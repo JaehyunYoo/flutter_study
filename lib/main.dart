@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:module_presentation/presentation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -70,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final moduleState = CounterState(_counter);
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -112,6 +114,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Text(
+              'Module Counter Class',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(
+              '${moduleState.state}',
+              style: Theme.of(context).textTheme.headlineMedium,
+            )
           ],
         ),
       ),
